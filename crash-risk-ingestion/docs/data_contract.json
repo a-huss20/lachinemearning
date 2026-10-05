@@ -1,0 +1,1145 @@
+{
+  "contract_version": "1.0.0",
+  "generated_at": "2026-10-01T11:56:50.840837+00:00",
+  "crash_period": "2020-2024",
+  "crs": "EPSG:7844",
+  "tables": {
+    "crash_locations": {
+      "grain": "One row per geocoded crash location; counts aggregate all crashes at that point over the period.",
+      "primary_key": "unique_loc",
+      "intended_use": "Severity classification (target: max_severity or any_fsi).",
+      "rows": 43522,
+      "columns": [
+        {
+          "name": "unique_loc",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "id",
+          "description": "Crash location identifier from DIT."
+        },
+        {
+          "name": "total_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "All reported crashes at the location/site, 2020-2024."
+        },
+        {
+          "name": "cse_pdo",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Property-damage-only crashes."
+        },
+        {
+          "name": "cse_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Injury crashes (includes serious injury)."
+        },
+        {
+          "name": "cse_fat",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal crashes."
+        },
+        {
+          "name": "cse_si",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Serious injury crashes."
+        },
+        {
+          "name": "total_casualties",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_fatalities",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_serious_injuries",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_rear_end",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_fixed_object",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_side_swipe",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_angle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_head_on",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_roll_over",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_turn",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_parked_vehile",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_animal",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_object_on_road",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_left_road_oc",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_other",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_unknown",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_bicycle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lco_night",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cse_minor_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Minor injury crashes (cse_inj - cse_si)."
+        },
+        {
+          "name": "fsi_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal + serious injury crashes (primary safety outcome)."
+        },
+        {
+          "name": "max_severity",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "ordinal 0-3",
+          "description": "Worst outcome: 0 PDO, 1 minor, 2 serious, 3 fatal."
+        },
+        {
+          "name": "max_severity_label",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "any_fsi",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "1 if at least one fatal or serious injury crash."
+        },
+        {
+          "name": "night_share",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "ratio",
+          "description": "Share of crashes in night lighting conditions."
+        },
+        {
+          "name": "vru_involved",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "Any pedestrian or cyclist involved."
+        },
+        {
+          "name": "intersection_site_key",
+          "dtype": "string",
+          "nulls": 42086,
+          "unit": "id",
+          "description": "Matched signalised intersection (within 20 m)."
+        },
+        {
+          "name": "intersection_dist_m",
+          "dtype": "float64",
+          "nulls": 42086,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "segment_id",
+          "dtype": "float64",
+          "nulls": 18797,
+          "unit": "id",
+          "description": "DIT traffic estimate section id."
+        },
+        {
+          "name": "segment_dist_m",
+          "dtype": "float64",
+          "nulls": 18797,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "site_type",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "category",
+          "description": "Assigned site: intersection, state_road_segment or other_road."
+        },
+        {
+          "name": "road_aadt",
+          "dtype": "float64",
+          "nulls": 17400,
+          "unit": "vehicles/day",
+          "description": "AADT of nearest state-road segment within 25 m (NaN = local road)."
+        },
+        {
+          "name": "road_cv_percent",
+          "dtype": "float64",
+          "nulls": 17407,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "road_volume_stale",
+          "dtype": "float64",
+          "nulls": 17400,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "road_road_no",
+          "dtype": "str",
+          "nulls": 17400,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "road_dist_m",
+          "dtype": "float64",
+          "nulls": 17400,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "on_state_road",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "Location lies within 25 m of a state road with a volume estimate."
+        },
+        {
+          "name": "dist_signal_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "dist_ped_crossing_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "dist_school_crossing_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "m",
+          "description": "Distance to the nearest school crossing."
+        },
+        {
+          "name": "ped_crossings_200m",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Pedestrian crossing sites within 200 m."
+        },
+        {
+          "name": "school_crossings_300m",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "School crossing sites within 300 m."
+        },
+        {
+          "name": "signals_200m",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "dist_cbd_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "km",
+          "description": "Straight-line distance to the Adelaide GPO (remoteness proxy)."
+        },
+        {
+          "name": "lon",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lat",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        }
+      ]
+    },
+    "intersection_sites": {
+      "grain": "One row per signalised intersection (site_type TS), including sites with zero crashes.",
+      "primary_key": "site_key",
+      "intended_use": "Crash frequency / rate modelling with exposure offset million_entering_vehicles.",
+      "rows": 677,
+      "columns": [
+        {
+          "name": "site_key",
+          "dtype": "string",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "site_type",
+          "dtype": "string",
+          "nulls": 0,
+          "unit": "category",
+          "description": "Assigned site: intersection, state_road_segment or other_road."
+        },
+        {
+          "name": "site_id",
+          "dtype": "string",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "site_desc",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "resp",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "road_no",
+          "dtype": "object",
+          "nulls": 677,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "rrd_ul",
+          "dtype": "object",
+          "nulls": 677,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "rrd_r",
+          "dtype": "object",
+          "nulls": 677,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "n_points",
+          "dtype": "int64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "point_spread_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "spread_flag",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cse_pdo",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Property-damage-only crashes."
+        },
+        {
+          "name": "cse_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Injury crashes (includes serious injury)."
+        },
+        {
+          "name": "cse_si",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Serious injury crashes."
+        },
+        {
+          "name": "cse_fat",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal crashes."
+        },
+        {
+          "name": "cty_rear_end",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_fixed_object",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_side_swipe",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_angle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_head_on",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_roll_over",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_turn",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_parked_vehile",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_animal",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_object_on_road",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_left_road_oc",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_other",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_unknown",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "All reported crashes at the location/site, 2020-2024."
+        },
+        {
+          "name": "total_casualties",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_fatalities",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_serious_injuries",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_bicycle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lco_night",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cse_minor_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Minor injury crashes (cse_inj - cse_si)."
+        },
+        {
+          "name": "fsi_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal + serious injury crashes (primary safety outcome)."
+        },
+        {
+          "name": "n_crash_locations",
+          "dtype": "int64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "entering_aadt",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "vehicles/day",
+          "description": "Sum over roads of max segment AADT within 50 m (entering-traffic proxy)."
+        },
+        {
+          "name": "major_road_aadt",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "n_state_roads",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cv_percent",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "%",
+          "description": "Commercial (heavy) vehicle share of traffic."
+        },
+        {
+          "name": "volume_stale",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "0/1",
+          "description": "Volume estimate based on a count more than 5 years old."
+        },
+        {
+          "name": "has_volume",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "million_entering_vehicles",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "MEV",
+          "description": "entering_aadt x 365 x 5 / 1e6 - exposure for intersections."
+        },
+        {
+          "name": "crash_rate_per_mev",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "crashes/MEV",
+          "description": "total_crashes / million_entering_vehicles."
+        },
+        {
+          "name": "fsi_rate_per_mev",
+          "dtype": "float64",
+          "nulls": 33,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "ped_crossings_200m",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Pedestrian crossing sites within 200 m."
+        },
+        {
+          "name": "school_crossings_300m",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "School crossing sites within 300 m."
+        },
+        {
+          "name": "dist_school_crossing_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "m",
+          "description": "Distance to the nearest school crossing."
+        },
+        {
+          "name": "dist_cbd_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "km",
+          "description": "Straight-line distance to the Adelaide GPO (remoteness proxy)."
+        },
+        {
+          "name": "any_fsi",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "1 if at least one fatal or serious injury crash."
+        },
+        {
+          "name": "lon",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lat",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        }
+      ]
+    },
+    "segment_sites": {
+      "grain": "One row per state-road traffic-volume segment, including segments with zero crashes.",
+      "primary_key": "segment_id",
+      "intended_use": "Crash frequency / rate modelling with exposure offset vkt_100m.",
+      "rows": 2685,
+      "columns": [
+        {
+          "name": "segment_id",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "id",
+          "description": "DIT traffic estimate section id."
+        },
+        {
+          "name": "road_no",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "carriageway",
+          "dtype": "str",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "start_rrd_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "end_rrd_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "aadt",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "vehicles/day",
+          "description": "Annual average daily traffic estimate."
+        },
+        {
+          "name": "volume_base_year",
+          "dtype": "int64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "volume_age_years",
+          "dtype": "int64",
+          "nulls": 0,
+          "unit": "years",
+          "description": "2024 minus the volume estimate's base count year."
+        },
+        {
+          "name": "volume_stale",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "Volume estimate based on a count more than 5 years old."
+        },
+        {
+          "name": "cv_percent",
+          "dtype": "float64",
+          "nulls": 12,
+          "unit": "%",
+          "description": "Commercial (heavy) vehicle share of traffic."
+        },
+        {
+          "name": "cv_missing",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "heavy_vehicle_aadt",
+          "dtype": "float64",
+          "nulls": 12,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "length_m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "m",
+          "description": "Projected segment length (GDA2020 Lambert)."
+        },
+        {
+          "name": "cse_pdo",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Property-damage-only crashes."
+        },
+        {
+          "name": "cse_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Injury crashes (includes serious injury)."
+        },
+        {
+          "name": "cse_si",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Serious injury crashes."
+        },
+        {
+          "name": "cse_fat",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal crashes."
+        },
+        {
+          "name": "cty_rear_end",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_fixed_object",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_side_swipe",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_angle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_head_on",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_roll_over",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_right_turn",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_parked_vehile",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_animal",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_hit_object_on_road",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_left_road_oc",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_other",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cty_unknown",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "All reported crashes at the location/site, 2020-2024."
+        },
+        {
+          "name": "total_casualties",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_fatalities",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "total_serious_injuries",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_bicycle",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "uty_pedestrian",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lco_night",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "cse_minor_inj",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Minor injury crashes (cse_inj - cse_si)."
+        },
+        {
+          "name": "fsi_crashes",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "count",
+          "description": "Fatal + serious injury crashes (primary safety outcome)."
+        },
+        {
+          "name": "n_crash_locations",
+          "dtype": "int64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "vkt_100m",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "1e8 veh-km",
+          "description": "aadt x 365 x 5 x length_km / 1e8 - exposure for segments."
+        },
+        {
+          "name": "crash_rate_per_100m_vkt",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "crashes/1e8 VKT",
+          "description": "total_crashes / vkt_100m."
+        },
+        {
+          "name": "fsi_rate_per_100m_vkt",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "signals_per_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "ped_crossings_per_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "school_crossings_on_segment",
+          "dtype": "int32",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "dist_cbd_km",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "km",
+          "description": "Straight-line distance to the Adelaide GPO (remoteness proxy)."
+        },
+        {
+          "name": "any_fsi",
+          "dtype": "int8",
+          "nulls": 0,
+          "unit": "0/1",
+          "description": "1 if at least one fatal or serious injury crash."
+        },
+        {
+          "name": "lon",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "lat",
+          "dtype": "float64",
+          "nulls": 0,
+          "unit": "",
+          "description": ""
+        }
+      ]
+    }
+  }
+}
