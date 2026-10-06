@@ -1,5 +1,5 @@
 # Student Name: Aftab Hussaini
-# Student FAN:  [YourFAN]
+# Student FAN:  huss0138
 # File:         contract.py
 # Date:         01-10-2026
 # Description:  Writes outputs and the machine-readable data contract consumed by the team's ML/reasoning modules.
