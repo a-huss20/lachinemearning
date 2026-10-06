@@ -1,5 +1,5 @@
 # Student Name: Aftab Hussaini
-# Student FAN:  [YourFAN]
+# Student FAN:  huss0138
 # File:         fetch.py
 # Date:         01-10-2026
 # Description:  Secure, cached, conditional download of source archives from data.sa.gov.au.
