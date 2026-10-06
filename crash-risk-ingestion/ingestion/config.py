@@ -1,5 +1,5 @@
 # Student Name: Aftab Hussaini
-# Student FAN:  [YourFAN]
+# Student FAN:  huss0138
 # File:         config.py
 # Date:         01-10-2026
 # Description:  Central configuration: data sources, CRS choices, spatial tolerances and limits.
